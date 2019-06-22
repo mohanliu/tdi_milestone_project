@@ -49,8 +49,8 @@ def get_data(season=2018):
     results.extend(res)
 
     while next_page:
-	res, next_page = _get_response(params, page=next_page)
-	results.extend(res)
+        res, next_page = _get_response(params, page=next_page)
+        results.extend(res)
 	
     df = nba_data_processing(results)
 
@@ -110,7 +110,10 @@ def create_plot(df, season):
 def index():
     current_season = request.args.get("Season")
     if current_season == None:
-	current_season = 2018
+        return render_template('index.html',
+		    seasons=list(range(1979, 2019))
+		    )
+        current_season = 2018
 
     # Collect data
     data_frame = get_data(current_season)
