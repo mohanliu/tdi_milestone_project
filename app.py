@@ -49,9 +49,9 @@ def get_data(season=2018):
     results.extend(res)
 
     while next_page:
-    	res, next_page = _get_response(params, page=next_page)
+	res, next_page = _get_response(params, page=next_page)
 	results.extend(res)
-
+	
     df = nba_data_processing(results)
 
     # Reformat date
