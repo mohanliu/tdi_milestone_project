@@ -8,11 +8,12 @@ from bokeh.models.tools import HoverTool
 from bokeh.layouts import gridplot
 from bokeh.embed import components
 import numpy as np
+import os
 
 app = Flask(__name__)
 
 # Global set-ups for free NBA api
-XRapid_api_key = "b2fdc13386msh575e284c678239ep122e42jsn46c144b81522"
+XRapid_api_key = os.environ.get('Rapid_API_KEY')
 XRapid_api_host = "free-nba.p.rapidapi.com"
 free_nba_api_endpoint = "https://free-nba.p.rapidapi.com/games"
 
