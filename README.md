@@ -18,3 +18,5 @@
 - Try locally
   
   ```heroku local```
+- Don't forget to setup API key on Heroku.com
+  - `Config Vars` in the project settings
